@@ -1,0 +1,18 @@
+---
+description: "HTTP sync, messaging async, idempotency, sagas"
+globs:
+  - "services/**"
+alwaysApply: false
+---
+## Synchronous
+- [COMM-SYNC-01] **MUST** set timeouts, retries (backoff + jitter), and circuit breakers.
+- [COMM-SYNC-02] **MUST** make handlers idempotent for safe retries.
+
+## Asynchronous
+- [COMM-ASYNC-01] **MUST** use durable queues and DLQs; at-least-once delivery.
+- [COMM-ASYNC-02] **MUST** make consumers idempotent and re-entrant; carry correlation IDs.
+- [COMM-ASYNC-03] **SHOULD** require strict ordering only when essential (costly).
+
+## Orchestration vs Choreography
+- [COMM-SAGA-01] **SHOULD** orchestrate cross-service workflows (sagas) when visibility/consistency matter.
+- [COMM-SAGA-02] **MAY** choreograph via events for loose coupling.

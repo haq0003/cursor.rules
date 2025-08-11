@@ -1,0 +1,21 @@
+---
+description: "DB-per-service, schema discipline, caches, search"
+globs:
+  - "services/**"
+  - "packages/**"
+alwaysApply: false
+---
+## General
+- [DATA-01] **MUST** use one logical DB per service; **MUST NOT** cross-query; integrate via APIs/events.
+- [DATA-02] **MUST** use parameterized queries; migrations automated & reversible.
+
+## SQL
+- [DATA-SQL-01] **SHOULD** normalize OLTP schemas; enforce invariants via constraints.
+- [DATA-SQL-02] **MUST** measure indexes; no speculative indexing.
+
+## NoSQL
+- [DATA-NS-01] **MUST** model per access patterns; validate on write; version document schemas.
+
+## Cache & Search
+- [DATA-CACHE-01] **MUST** define TTLs/invalidations; caches are hints, not truth.
+- [DATA-SRCH-01] **MUST** treat search indices as projections; rebuildable at any time.

@@ -1,0 +1,20 @@
+---
+description: "Consistent errors, structured logging, metrics, tracing"
+globs:
+  - "**/*"
+alwaysApply: false
+---
+## Errors
+- [ERR-02] **MUST** fail fast on programmer errors; return typed failures for recoverable cases.
+- [ERR-03] **MUST** use standard API error shape: `{ code, message, details?, correlationId }`.
+
+## Logging
+- [LOG-01] **MUST** emit structured logs (JSON where supported) with correlation/trace IDs.
+- [LOG-02] **MUST NOT** log secrets or PII; redact by default. (See `SEC-LOG-01`)
+
+## Observability
+- [OBS-01] **MUST** emit four golden signals: latency, traffic, errors, saturation.
+- [OBS-02] **SHOULD** trace critical flows end-to-end; span names reflect domain actions.
+
+## Exceptions
+- [ADR-02] **MUST** record ADR if deviating from the standard error schema/log levels.

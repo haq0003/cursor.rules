@@ -1,0 +1,17 @@
+---
+description: "Branching model, commit hygiene, PR checklist"
+globs:
+  - "**/*"
+alwaysApply: false
+---
+## Git
+- [GIT-10] **SHOULD** favor trunk-based or short-lived feature branches; frequent small merges.
+- [GIT-11] **MUST** use Conventional Commits.
+
+## PR Review Checklist
+- [PR-01] Single responsibility & small diff? (DoD-01/DoD-03)
+- [PR-02] Tests included/updated; coverage preserved? (CI-01, TEST-*) 
+- [PR-03] Security implications reviewed; secrets excluded? (SEC-*, CI-SEC-01)
+- [PR-04] Logs/metrics/traces added where needed? (OBS-01/OBS-02)
+- [PR-05] Breaking changes? Version bump + migration notes? (REL-00, API-V-01)
+- [PR-06] Docs/ADRs updated? (DOC-00, ADR-01)

@@ -1,0 +1,17 @@
+---
+description: "Versioning, deprecation policy, SLO/SLI, incident response, runbooks"
+globs:
+  - "**/*"
+alwaysApply: false
+---
+## Releases
+- [REL-01] **MUST** use semantic versioning; maintain changelog.
+- [REL-02] **MUST** announce deprecations with timelines; provide migration guides.
+
+## SRE Basics
+- [SRE-01] **MUST** define SLIs/SLOs per service; dashboards as code.
+- [SRE-02] **MUST** ensure alerts are actionable; link to runbooks.
+
+## Incidents
+- [SRE-03] **MUST** maintain on-call rotation; store runbooks under `docs/runbooks/`.
+- [SRE-04] **SHOULD** conduct blameless postmortems with action items and owners.

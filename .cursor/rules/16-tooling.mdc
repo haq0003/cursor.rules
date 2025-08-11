@@ -1,0 +1,20 @@
+---
+description: "Tooling guardrails mapping rules to automated checks"
+globs:
+  - "**/*"
+alwaysApply: false
+---
+## Editor & Formatting
+- [TOOL-01] **MUST** provide `.editorconfig`; enforce Prettier for formatting.
+
+## Lint & Types
+- [TOOL-02] **MUST** configure ESLint + TypeScript strict mode (no implicit any, strict null checks).
+- [TOOL-03] **SHOULD** enable import/order and naming-convention rules aligned with `CODE-*`.
+
+## Commits & Security
+- [TOOL-04] **MUST** use Commitlint for Conventional Commits.
+- [TOOL-05] **MUST** enable Dependabot/Snyk (deps); enable Gitleaks/TruffleHog (secret scanning).
+
+## CI Integration
+- [TOOL-06] **MUST** fail pipeline on lint/type/test/security scan errors.
+- [TOOL-07] **SHOULD** publish SBOM and signed artifacts in releases.

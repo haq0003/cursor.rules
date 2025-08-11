@@ -1,0 +1,31 @@
+---
+description: "TypeScript/JavaScript clean code rules"
+globs:
+  - "**/*.{ts,tsx,js,jsx,mts,cts}"
+alwaysApply: false
+---
+## Naming & Comments
+- [CODE-01] **MUST** name booleans with `is/has/can/should*`; collections plural; maps `keyToValue`.
+- [CODE-02] **MUST** write comments that explain **why** (intent/trade-offs), not **what**; remove stale comments.
+- [CODE-03] **SHOULD** pair method names consistently (`add/remove`, `start/stop`, `to/from`).
+
+## Structure & Functions
+- [CODE-10] **MUST** keep one cohesive responsibility per file; prefer < ~40 LOC per function (extract helpers).
+- [CODE-11] **MUST** replace large switch/if chains with strategy/polymorphism/lookup tables.
+- [CODE-12] **MUST NOT** perform hidden I/O in pure computations; avoid global mutable state.
+
+## Types & Errors
+- [TS-01] **MUST** avoid `any`; prefer explicit types, `enum`/union types, and branded types for domain primitives.
+- [TS-02] **MUST NOT** return `null`; use `Option`-like types or `Result` objects as per project conventions.
+- [ERR-01] **MUST** throw/return typed errors with context (no secrets).
+
+## Minimal Example (good/bad)
+```ts
+// BAD
+function process(u){ if(u.t === 1){/*...*/} else if(u.t===2){/*...*/} }
+
+// GOOD (CODE-11, TS-01)
+type UserType = 'admin'|'staff';
+const handlers: Record<UserType,(u:User)=>void> = { admin: handleAdmin, staff: handleStaff };
+function process(user: User){ return handlers[user.type](user); }
+```

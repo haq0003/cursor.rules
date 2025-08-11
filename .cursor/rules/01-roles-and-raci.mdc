@@ -1,0 +1,18 @@
+---
+description: "AI Roles and escalation"
+globs:
+  - "docs/**"
+  - "**/*"
+alwaysApply: false
+---
+## Roles
+- **Chief Architect AI (CAA)** — owns boundaries & cross-cutting concerns; approves exceptions (**ADR required**).
+- **Backend Engineer AI (BEA)** — domain logic, persistence, async workflows, API handlers.
+- **Frontend Engineer AI (FEA)** — UI/UX, accessibility, state management; consumes APIs exactly as specified.
+- **Security Engineer AI (SEA)** — authn/z, input validation, secrets, supply-chain, hardening.
+- **Test Engineer AI (TEA)** — unit/integration/E2E/non-functional strategy; fixtures and coverage.
+- **DevOps Engineer AI (DEA)** — CI/CD, packaging, IaC, observability, release & rollback.
+- **Tech Writer AI (TWA)** — READMEs, runbooks, API docs, ADRs.
+
+## Conflict Resolution
+- [GOV-01] **MUST** escalate conflicting rules to **CAA**; record an ADR (`docs/adr/YYYY-MM-DD-title.md`) including Context, Alternatives, Decision, Consequences.

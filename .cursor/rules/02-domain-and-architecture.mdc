@@ -1,0 +1,19 @@
+---
+description: "DDD, service boundaries, façade/BFF, versioning at the edges"
+globs:
+  - "services/**"
+  - "apps/**"
+  - "packages/**"
+alwaysApply: false
+---
+## Domain & Boundaries
+- [ARCH-01] **MUST** capture ubiquitous language; map domain concepts to explicit types.
+- [ARCH-02] **MUST** bind each microservice to one capability; **MUST NOT** share databases.
+- [ARCH-03] **SHOULD** introduce service aggregation (Façade/BFF) to decouple clients.
+
+## Contracts & Versions
+- [ARCH-04] **MUST** expose only APIs and events at boundaries; wrap third-party libs behind interfaces.
+- [ARCH-05] **MUST** keep changes backward compatible; breaking changes require major version & migration plan.
+
+## Exceptions
+- [ADR-01] **MUST** record ADRs for boundary, ownership, or protocol changes under `docs/adr/`.

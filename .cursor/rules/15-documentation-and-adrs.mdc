@@ -1,0 +1,25 @@
+---
+description: "Docs structure, API source of truth, ADRs, diagrams-as-code"
+globs:
+  - "**/*.md"
+  - "docs/**"
+alwaysApply: false
+---
+## Docs
+- [DOC-01] **MUST** have root `README.md`: quickstart, architecture overview, common tasks.
+- [DOC-02] **MUST** place deeper guides under `docs/`; decisions under `docs/adr/`; ops under `docs/runbooks/`.
+- [DOC-03] **SHOULD** use diagrams-as-code (Mermaid/PlantUML); keep docs in lockstep with code.
+
+## API Docs
+- [DOC-API-01] **MUST** generate docs from the contract source (OpenAPI/proto/GraphQL schema); version & publish.
+
+## ADR Template (example)
+```
+# Title
+Date: YYYY-MM-DD
+Status: Accepted | Proposed | Deprecated
+Context:
+Decision:
+Consequences:
+References:
+```

@@ -1,0 +1,14 @@
+---
+description: "Terraform standards for cloud infra (registry, cluster, networking)"
+globs:
+  - "infra/**"
+  - "**/*.tf"
+alwaysApply: false
+---
+## Terraform
+- [IAC-01] **MUST** pin providers; use remote state with locking; type variables; sensible defaults.
+- [IAC-02] **SHOULD** use reusable modules (registry, cluster, VPC/VNet, DB); avoid copy-paste.
+
+## Security & Secrets
+- [IAC-SEC-01] **MUST NOT** output sensitive values; integrate with a secret manager.
+- [IAC-SEC-02] **MUST** run plan → review → apply via CI; schedule drift detection.

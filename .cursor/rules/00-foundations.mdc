@@ -1,0 +1,21 @@
+---
+description: "Foundations: Definition of Done, gates, branch model"
+globs:
+  - "**/*"
+alwaysApply: true
+---
+## Definition of Done
+- [DoD-01] **MUST** compile with zero errors and no new high-severity lints.
+- [DoD-02] **MUST** pass static analysis, secret scan, and dependency audit.
+- [DoD-03] **MUST** pass unit & integration tests; critical E2E green.
+- [OBS-00] **MUST** update observability (structured logs, metrics, traces) for changed paths.
+- [DOC-00] **MUST** update docs (README, API schema, ADR for architectural decisions).
+- [REL-00] **MUST** preserve backward compatibility or bump version with migration notes.
+
+## Branching & Commits
+- [GIT-01] **SHOULD** use trunk-based or short-lived feature branches; squash merge.
+- [GIT-02] **MUST** follow Conventional Commits: `feat|fix|chore|docs|refactor|test|perf(scope): message`.
+
+## PR Expectations
+- [GIT-03] **MUST** keep PRs small & single-responsibility; provide clear description.
+- [GIT-04] **MUST NOT** include commented-out/dead code; no TODOs without a linked issue.

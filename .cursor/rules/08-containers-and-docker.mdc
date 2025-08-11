@@ -1,0 +1,15 @@
+---
+description: "Dockerfiles and local dev with Compose"
+globs:
+  - "**/*Dockerfile"
+  - "docker-compose*.yml"
+alwaysApply: false
+---
+## Dockerfile
+- [DOCK-01] **MUST** use multi-stage builds; minimal base images; non-root user; pinned tags.
+- [DOCK-02] **MUST NOT** bake secrets into layers; add healthcheck where appropriate.
+- [DOCK-03] **SHOULD** expose only necessary ports.
+
+## Compose (dev only)
+- [DOCK-10] **SHOULD** bind-mount source for live reload; keep dev/prod Dockerfiles separate.
+- [DOCK-11] **MUST** keep env/config parity with prod shape.

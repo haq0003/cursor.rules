@@ -1,0 +1,23 @@
+---
+description: "Project-wide entrypoint: guards & reading order"
+globs:
+  - "**/*"
+alwaysApply: true
+---
+# Global Principles
+- **SRP & High Cohesion / Low Coupling** across modules and services.
+- **Open/Closed**: extend via new modules/handlers; avoid breaking contracts.
+- **Composition over Inheritance**; prefer immutability and pure functions.
+- **Security-first & Observability-first**; all inputs are untrusted.
+- **Reproducibility by automation** (builds, tests, deploys, infra).
+- **Small, single-purpose PRs** that are fully tested.
+
+> Severity levels: **MUST**, **SHOULD**, **MAY**. Rules carry IDs (e.g., `API-REST-03`).
+
+# Required Reading Order (for the AI)
+1) 00-foundations → 01-roles-and-raci → 02-domain-and-architecture  
+2) 03-typescript-coding-standards → 04-error-handling-logging-observability  
+3) 05-api-design-and-versioning → 06-data-management → 07-service-communication  
+4) 08-containers-and-docker → 09-kubernetes → 10-ci-cd-github-actions → 10-git-and-reviews  
+5) 11-terraform-iac → 12-testing-strategy → 13-security  
+6) 14-release-and-operations → 15-documentation-and-adrs → 16-tooling

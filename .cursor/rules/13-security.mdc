@@ -1,0 +1,29 @@
+---
+description: "AuthN/Z, input validation, secrets, supply chain, DoS"
+globs:
+  - "**/*"
+alwaysApply: false
+---
+## Authentication & Authorization
+- [SEC-AUTH-01] **MUST** centralize OIDC/OAuth2; validate issuer/audience/expiry.
+- [SEC-AUTH-02] **MUST** enforce authorization on the backend; never trust client claims.
+
+## Input/Output Safety
+- [SEC-INPUT-01] **MUST** validate all inputs (type, length, range).
+- [SEC-OUTPUT-01] **MUST** encode outputs per context (HTML/JS/SQL).
+- [SEC-SQL-01] **MUST** use parameterized SQL.
+- [SEC-CSP-01] **SHOULD** enable CSP and strict CORS for web apps.
+- [SEC-LOG-01] **MUST NOT** log secrets/PII (referenced by LOG-02).
+
+## Secrets & Crypto
+- [SEC-SECRETS-01] **MUST** manage secrets in a vault/manager; never commit to VCS.
+- [SEC-CRYPTO-01] **MUST** use proven crypto; rotate keys; hash passwords (Argon2/bcrypt with salt).
+
+## Supply Chain & Hardening
+- [SEC-SC-01] **MUST** pin dependencies; run vulnerability scans; sign artifacts; use minimal images; disallow root containers.
+
+## DoS & Resilience
+- [SEC-DOS-01] **MUST** implement rate limiting (token/leaky bucket), circuit breakers, timeouts, and backoff with jitter.
+
+## Exceptions
+- [ADR-SEC-01] **MUST** create ADR when relaxing security defaults; include compensating controls.

@@ -1,0 +1,19 @@
+---
+description: "Kubernetes: manifests, probes, resources, RBAC, network policies"
+globs:
+  - "k8s/**"
+  - "kubernetes/**"
+  - "helm/**"
+  - "charts/**"
+alwaysApply: false
+---
+## Workloads
+- [K8S-01] **MUST** use Deployments; set readiness/liveness probes; graceful shutdown.
+- [K8S-02] **MUST** set requests/limits; use HPA; apply PodDisruptionBudgets when availability matters.
+
+## Security
+- [K8S-SEC-01] **MUST** run as non-root; drop capabilities; readOnlyRootFilesystem when viable.
+- [K8S-SEC-02] **MUST** enforce least-privilege RBAC; default-deny NetworkPolicies with minimal allows.
+
+## Config
+- [K8S-CFG-01] **MUST** externalize config via ConfigMaps; manage secrets via a secret manager; never commit secrets.

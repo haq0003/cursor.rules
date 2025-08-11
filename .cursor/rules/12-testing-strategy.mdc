@@ -1,0 +1,22 @@
+---
+description: "Unit, integration (real adapters), E2E, non-functional"
+globs:
+  - "**/*"
+alwaysApply: false
+---
+## Strategy
+- [TEST-01] **SHOULD** apply testing pyramid: many unit, fewer integration, very few E2E (critical journeys).
+- [TEST-02] **MUST** name tests by behavior (GWT or Arrange/Act/Assert).
+
+## Unit
+- [TEST-U-01] **MUST** keep tests deterministic, isolated, fast; mocks only at boundaries.
+
+## Integration
+- [TEST-I-01] **SHOULD** use real infra via containers (DB, MQ, HTTP); seed via migrations/fixtures.
+
+## E2E
+- [TEST-E2E-01] **MUST** run in hermetic env (compose or ephemeral k8s namespace).
+
+## Non-functional
+- [TEST-NF-01] **SHOULD** define SLAs for latency/throughput; include soak/stability tests.
+- [TEST-NF-02] **SHOULD** automate SAST/DAST in the pipeline.

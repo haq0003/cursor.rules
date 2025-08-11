@@ -1,0 +1,22 @@
+---
+description: "REST/GraphQL/gRPC contracts, pagination, errors, versioning"
+globs:
+  - "services/**"
+  - "apps/**"
+alwaysApply: false
+---
+## REST
+- [API-REST-01] **MUST** use plural nouns for resources; POST/GET/PATCH/DELETE.
+- [API-REST-02] **MUST** return `201 + Location` on create; `202` for async; `409` on conflict; `422` on validation.
+- [API-REST-03] **SHOULD** standardize pagination/filtering/sorting; document query params.
+
+## GraphQL
+- [API-GQL-01] **MUST** keep queries read-only; mutations for changes; subscriptions for events.
+- [API-GQL-02] **SHOULD** provide examples to avoid under/over-fetching.
+
+## gRPC
+- [API-GRPC-01] **MUST** evolve proto schemas backward-compatibly; use rich error details.
+- [API-GRPC-02] **MAY** use streaming when it materially improves UX/efficiency.
+
+## Versioning
+- [API-V-01] **MUST** apply semantic versions to APIs/schemas; announce deprecations with timeline & migration guide.

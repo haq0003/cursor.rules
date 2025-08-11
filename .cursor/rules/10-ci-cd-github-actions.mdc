@@ -1,0 +1,16 @@
+---
+description: "CI gates, CD promotion, rollout & rollback"
+globs:
+  - ".github/workflows/**"
+alwaysApply: false
+---
+## CI
+- [CI-01] **MUST** run lint, typecheck, unit tests, integration tests (containers), SAST, and dependency audit.
+- [CI-02] **MUST** build reproducible, signed artifacts; generate SBOM.
+
+## CD
+- [CD-01] **SHOULD** deploy to staging on main merge; require approval/automated checks for prod.
+- [CD-02] **SHOULD** use canary/blue-green when feasible; **MUST** enable automated rollback on SLO breach.
+
+## Secrets & Config
+- [CI-SEC-01] **MUST** use protected environments/secrets; **MUST NOT** echo secrets in logs.
